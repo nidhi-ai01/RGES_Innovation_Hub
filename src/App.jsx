@@ -16,8 +16,6 @@ import ChatbotButton from "./components/ChatbotButton.jsx";
 
 // Import images
 import logo from "./assets/rges-logo.jpg";
-import partner1 from "./assets/partner1.jpg";
-import partner2 from "./assets/partner2.jpg";
 import intellirmLogo from "./assets/intellirmLogo.jpg";  
 
 function App() {
@@ -35,7 +33,7 @@ function App() {
       <JourneySection />
       <WhatWeOfferSection />
       <ProgramsSection />
-      <PartnersSection partner1={partner1} partner2={partner2} intellirmLogo={intellirmLogo} />
+      <PartnersSection  intellirmLogo={intellirmLogo} />
       <CTASection />
       <Footer logo={logo} />
 

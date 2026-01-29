@@ -5,18 +5,7 @@ const PartnersSection = ({ partner1, partner2, intellirmLogo }) => {
 
   const partners = [
     {
-      name: "OpenCom AI",
-      logo: partner1,
-      link: "https://www.opencomai.com/",
-      description: "AI-Powered Communication Solutions",
-    },
-    {
-      name: "The Metalayer",
-      logo: partner2,
-      link: "https://themetalayer.org/",
-      description: "Web3 Innovation Platform",
-    },
-    {
+
       name: "IntelliRMS",
       logo: intellirmLogo,
       link: "#",
