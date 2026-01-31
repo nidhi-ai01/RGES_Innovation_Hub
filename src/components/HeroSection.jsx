@@ -41,13 +41,16 @@ const HeroSection = () => {
         <div className="text-center">
           {/* Badge */}
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full mb-8 bg-slate-900 border border-slate-800">
-            <span
-              className="text-xs font-semibold text-blue-400 uppercase tracking-widest"
-              style={{ fontFamily: "Inter, sans-serif" }}
-            >
-              Come Fail, Learn and Build
-            </span>
-          </div>
+  <span
+    className="text-xs font-semibold uppercase tracking-widest
+               text-blue-400 transition-all duration-300
+               hover:text-blue-300 hover:scale-105"
+    style={{ fontFamily: "Inter, sans-serif" }}
+  >
+    Come Fail, Learn and Build
+  </span>
+</div>
+
 
           {/* Main Heading */}
           <h1
