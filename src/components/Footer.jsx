@@ -3,10 +3,7 @@ import {
   Mail,
   Phone,
   MapPin,
-  Twitter,
-  Linkedin,
-  Instagram,
-  Github,
+  
 } from "lucide-react";
 
 const Footer = ({ logo }) => {
@@ -17,12 +14,7 @@ const Footer = ({ logo }) => {
     { name: "Partners", href: "#partners" },
   ];
 
-  const socialLinks = [
-    { icon: Twitter, href: "#", label: "Twitter" },
-    { icon: Linkedin, href: "#", label: "LinkedIn" },
-    { icon: Instagram, href: "#", label: "Instagram" },
-    { icon: Github, href: "#", label: "GitHub" },
-  ];
+ 
 
   return (
     <footer className="bg-slate-950 text-white">
@@ -114,18 +106,18 @@ const Footer = ({ logo }) => {
 
               <li>
                 <a
-                  href="tel:+919876543210"
+                  href="tel:+918309743210"
                   className="flex items-start gap-2 text-slate-400 hover:text-white transition"
                 >
                   <Phone size={16} />
-                  +91 98765 43210
+                  +91 83097 43210
                 </a>
               </li>
 
               <li className="flex items-start gap-2 text-slate-400">
                 <MapPin size={16} />
                 <span>
-                  Innovation Hub, Tech Park
+                   101, Metro Avenue, Plot No. 28 & 29, Calvary Temple Rd, IDPl Employees Colony, Hafeezpet
                   <br />
                   Hyderabad, India
                 </span>
