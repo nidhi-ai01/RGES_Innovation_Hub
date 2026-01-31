@@ -27,7 +27,7 @@ const Footer = ({ logo }) => {
             <div className="flex items-center gap-3 mb-4">
               {logo && (
                 <img
-                  src={logo}
+                  src={assets/rges-logo.jpg}
                   alt="RGES Logo"
                   className="h-9 w-auto object-contain brightness-0 invert"
                 />
