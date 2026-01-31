@@ -1,12 +1,28 @@
-import React from "react";
+import React, { useState, useRef } from "react";
 import { ArrowRight } from "lucide-react";
 import heroVideo from "../assets/HerSection-bg-video.mp4";
-import { useState, useRef } from "react";
-
 
 const HeroSection = () => {
-  const [displayText, setDisplayText] = useState("Come Fail, Learn and Build");
-const typingRef = useRef(null);
+  const text = "Come Fail, Learn and Build";
+  const [displayText, setDisplayText] = useState(text);
+  const typingRef = useRef(null);
+
+  const startTyping = () => {
+    if (typingRef.current) return;
+
+    setDisplayText("");
+    let i = 0;
+
+    typingRef.current = setInterval(() => {
+      i++;
+      setDisplayText(text.slice(0, i));
+
+      if (i === text.length) {
+        clearInterval(typingRef.current);
+        typingRef.current = null;
+      }
+    }, 60);
+  };
 
   return (
     <section
@@ -25,10 +41,10 @@ const typingRef = useRef(null);
         <source src={heroVideo} type="video/mp4" />
       </video>
 
-      {/* Overlay for better text readability */}
+      {/* Overlay */}
       <div className="absolute inset-0 bg-slate-950/70"></div>
 
-      {/* Technical Background Grid */}
+      {/* Background Grid */}
       <div className="absolute inset-0 overflow-hidden">
         <div
           className="absolute inset-0 opacity-[0.03]"
@@ -37,7 +53,6 @@ const typingRef = useRef(null);
             backgroundSize: "40px 40px",
           }}
         ></div>
-        {/* Subtle vignette */}
         <div className="absolute inset-0 bg-gradient-to-b from-slate-950/80 via-transparent to-slate-950/80 pointer-events-none"></div>
       </div>
 
@@ -45,17 +60,20 @@ const typingRef = useRef(null);
       <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-32">
         <div className="text-center">
           {/* Badge */}
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full mb-8 bg-slate-900 border border-slate-800">
-           <span
-           className="text-xs font-semibold text-blue-400 uppercase tracking-widest"
-           style={{ fontFamily: "Inter, sans-serif" }}
-           >
-           Come Fail, Learn and Build
-          </span>
-
+          <div
+            onMouseEnter={startTyping}
+            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full mb-8 bg-slate-900 border border-slate-800 cursor-pointer"
+          >
+            <span
+              className="text-xs font-semibold text-blue-400 uppercase tracking-widest"
+              style={{ fontFamily: "Inter, sans-serif" }}
+            >
+              {displayText}
+              <span className="ml-0.5 animate-pulse">|</span>
+            </span>
           </div>
 
-          {/* Main Heading */}
+          {/* Heading */}
           <h1
             id="hero-heading"
             className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-8 leading-tight text-white tracking-tight"
@@ -75,7 +93,7 @@ const typingRef = useRef(null);
             mentorship, validation programs, and a founder-led community.
           </p>
 
-          {/* CTA Buttons */}
+          {/* CTA */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <button
               className="w-full sm:w-auto px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white rounded-xl font-semibold text-base transition-colors duration-200"
