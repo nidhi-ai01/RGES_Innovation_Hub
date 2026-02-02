@@ -15,7 +15,6 @@ import { ApplicationModal } from "./components/ApplicationModal.jsx";
 import ChatbotButton from "./components/ChatbotButton.jsx";
 
 // Import images
-import logo from "./assets/rges-logo.jpg";
 import intellirmLogo from "./assets/intellirmLogo.jpg";  
 
 function App() {
@@ -24,7 +23,7 @@ function App() {
   return (
     <>
       {/* Header */}
-      <Header onApplyClick={() => setIsModalOpen(true)} logo={logo} />
+      <Header onApplyClick={() => setIsModalOpen(true)} logo={""} />
 
       {/* Sections (UNCHANGED) */}
       <HeroSection />
@@ -35,7 +34,7 @@ function App() {
       <ProgramsSection />
       <PartnersSection  intellirmLogo={intellirmLogo} />
       <CTASection />
-      <Footer logo={logo} />
+      <Footer />
 
       {/* Google Form Modal */}
       <ApplicationModal

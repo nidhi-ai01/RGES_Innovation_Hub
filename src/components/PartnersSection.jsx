@@ -28,7 +28,7 @@ const PartnersSection = ({ partner1, partner2, intellirmLogo }) => {
         </div>
 
         {/* Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+        <div className="align-items-center justify-center gap-6">
 
           {partners.map((partner, index) => (
             <a
@@ -45,7 +45,7 @@ const PartnersSection = ({ partner1, partner2, intellirmLogo }) => {
               <img
                 src={partner.logo}
                 alt={partner.name}
-                className="h-14 object-contain mb-4
+                className="h-14 object-contain  mb-4
                            transition-transform duration-300
                            group-hover:scale-105"
               />

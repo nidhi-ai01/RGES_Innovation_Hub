@@ -50,7 +50,7 @@ const Header = ({ onApplyClick, logo }) => {
               <div className="relative">
                 {logo ? (
                   <img
-                    src={logo}
+                    src={""}
                     alt="RGES Innovation Hub Logo"
                     className="w-10 h-10 md:w-12 md:h-12 rounded-lg object-contain"
                   />
