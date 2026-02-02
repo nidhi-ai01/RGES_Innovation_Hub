@@ -33,7 +33,7 @@ const PartnersSection = ({ partner1, partner2, intellirmLogo }) => {
           {partners.map((partner, index) => (
             <a
               key={index}
-              href={"www.intellirms.com"}
+              href={"https://intellirms.com"}
               target="_blank"
               rel="noopener noreferrer"
               className="group bg-white border rounded-lg p-5
