@@ -71,11 +71,11 @@ const Footer = ({ logo }) => {
         <ul className="space-y-4 text-sm">
           <li>
             <a
-              href="mailto:hello@rgesinnovationhub.com"
+              href="mailto:service@rgesinnovationhub.com"
               className="flex gap-2 text-slate-400 hover:text-white transition"
             >
               <Mail size={16} />
-              hello@rgesinnovationhub.com
+              service@rgesinnvationhub.com
             </a>
           </li>
 
