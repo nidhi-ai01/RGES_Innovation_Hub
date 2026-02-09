@@ -5,43 +5,50 @@ import {
   Users,
   Rocket,
   TrendingUp,
-  ChevronRight,
   ArrowRight,
 } from "lucide-react";
 
 const JourneySection = () => {
-  const [activeStep, setActiveStep] = useState(0);
-
   const journeySteps = [
     {
       icon: Lightbulb,
       title: "Idea Discovery",
       description:
         "Identify problems worth solving and validate market opportunities.",
+      color: "from-blue-500 to-blue-600",
+      bgColor: "bg-blue-500",
     },
     {
       icon: Search,
       title: "Market Validation",
       description:
         "Test your assumptions, understand your customers, and refine your value proposition.",
+      color: "from-purple-500 to-purple-600",
+      bgColor: "bg-purple-500",
     },
     {
       icon: Users,
       title: "Mentorship & Strategy",
       description:
         "Get guidance from experienced founders and build your go-to-market strategy.",
+      color: "from-pink-500 to-rose-600",
+      bgColor: "bg-pink-500",
     },
     {
       icon: Rocket,
       title: "MVP & Early Traction",
       description:
         "Build your minimum viable product and acquire your first customers.",
+      color: "from-amber-500 to-orange-600",
+      bgColor: "bg-amber-500",
     },
     {
       icon: TrendingUp,
       title: "Funding & Growth",
       description:
         "Become investment-ready and secure funding to scale your startup.",
+      color: "from-yellow-400 to-yellow-500",
+      bgColor: "bg-yellow-400",
     },
   ];
 
@@ -70,96 +77,64 @@ const JourneySection = () => {
           </p>
         </div>
 
-        {/* Desktop View - Horizontal Timeline */}
-        <div className="hidden lg:block">
-          <div className="relative">
-            {/* Progress Line Background */}
-            <div className="absolute top-8 left-0 right-0 h-0.5 bg-slate-200"></div>
+        {/* Timeline */}
+        <div className="relative">
+          {/* Gradient Timeline Line */}
+          <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-blue-500 via-purple-500 via-pink-500 via-amber-500 to-yellow-400"></div>
 
-            {/* Active Progress Line */}
-            <div
-              className="absolute top-8 left-0 h-0.5 bg-slate-900 transition-all duration-500 ease-in-out"
-              style={{
-                width: `${(activeStep / (journeySteps.length - 1)) * 100}%`,
-              }}
-            ></div>
+          {/* Timeline Steps */}
+          <div className="space-y-12 md:space-y-20">
+            {journeySteps.map((step, index) => {
+              const Icon = step.icon;
+              const isLeft = index % 2 === 0;
 
-            {/* Steps */}
-            <div className="grid grid-cols-5 relative z-10">
-              {journeySteps.map((step, index) => {
-                const Icon = step.icon;
-                const isActive = index === activeStep;
-                const isPassed = index <= activeStep;
-
-                return (
+              return (
+                <div
+                  key={index}
+                  className="relative"
+                >
                   <div
-                    key={index}
-                    className="relative flex flex-col items-center cursor-pointer group"
-                    onClick={() => setActiveStep(index)}
+                    className={`flex items-center ${
+                      isLeft ? "flex-row" : "flex-row-reverse"
+                    }`}
                   >
-                    {/* Icon Circle */}
+                    {/* Card */}
                     <div
-                      className={`w-16 h-16 rounded-full flex items-center justify-center border-4 transition-all duration-300 mb-8 bg-white
-                        ${isPassed ? "border-slate-900 text-slate-900" : "border-slate-200 text-slate-300 group-hover:border-slate-300"}`}
+                      className={`w-full md:w-5/12 ${isLeft ? "md:pr-12" : "md:pl-12"}`}
                     >
-                      <Icon className="w-6 h-6" />
+                      <div
+                        className={`bg-white p-6 md:p-8 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 ${
+                          isLeft ? "md:text-right" : "md:text-left"
+                        } text-center md:text-inherit`}
+                      >
+                        <h3
+                          className="text-xl md:text-2xl font-bold text-slate-900 mb-3"
+                          style={{ fontFamily: "Inter, sans-serif" }}
+                        >
+                          {step.title}
+                        </h3>
+                        <p className="text-slate-600 leading-relaxed text-sm md:text-base">
+                          {step.description}
+                        </p>
+                      </div>
                     </div>
 
-                    {/* Content Card */}
-                    <div className="text-center px-4">
-                      <h3
-                        className={`text-lg font-bold mb-3 transition-colors duration-300
-                          ${isActive ? "text-slate-900" : "text-slate-500"}`}
-                        style={{ fontFamily: "Inter, sans-serif" }}
+                    {/* Center Icon */}
+                    <div className="w-full md:w-2/12 flex justify-center relative z-10">
+                      <div
+                        className={`w-16 h-16 md:w-20 md:h-20 rounded-full ${step.bgColor} flex items-center justify-center text-white shadow-lg border-4 border-white transform transition-transform duration-300 hover:scale-110`}
                       >
-                        {step.title}
-                      </h3>
-                      <p
-                        className={`text-sm leading-relaxed transition-colors duration-300
-                        ${isActive ? "text-slate-600" : "text-slate-400"}`}
-                      >
-                        {step.description}
-                      </p>
+                        <Icon className="w-8 h-8 md:w-10 md:h-10" />
+                      </div>
                     </div>
+
+                    {/* Spacer for card alignment */}
+                    <div className="w-full md:w-5/12"></div>
                   </div>
-                );
-              })}
-            </div>
+                </div>
+              );
+            })}
           </div>
-        </div>
-
-        {/* Mobile & Tablet View - Vertical Timeline */}
-        <div className="lg:hidden space-y-0">
-          {journeySteps.map((step, index) => {
-            const Icon = step.icon;
-
-            return (
-              <div key={index} className="relative pl-12 pb-12 last:pb-0">
-                {/* Connecting Line */}
-                {index < journeySteps.length - 1 && (
-                  <div className="absolute left-[22px] top-12 bottom-0 w-0.5 bg-slate-200"></div>
-                )}
-
-                {/* Icon Marker */}
-                <div className="absolute left-0 top-0 w-11 h-11 rounded-full border-2 border-slate-900 bg-white flex items-center justify-center text-slate-900 z-10">
-                  <Icon className="w-5 h-5" />
-                </div>
-
-                {/* Content */}
-                <div className="pt-1">
-                  <h3
-                    className="text-xl font-bold text-slate-900 mb-2"
-                    style={{ fontFamily: "Inter, sans-serif" }}
-                  >
-                    {step.title}
-                  </h3>
-                  <p className="text-slate-600 leading-relaxed max-w-lg">
-                    {step.description}
-                  </p>
-                </div>
-              </div>
-            );
-          })}
         </div>
 
         {/* Bottom CTA */}
