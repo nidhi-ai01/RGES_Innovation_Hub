@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Menu, X, ArrowRight } from "lucide-react";
+import logoImg from "../assets/logo.jpeg";
 
-const Header = ({ onApplyClick, logo }) => {
+const Header = ({ onApplyClick }) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState("");
@@ -48,15 +49,11 @@ const Header = ({ onApplyClick, logo }) => {
               onClick={() => scrollToSection("hero")}
             >
               <div className="relative">
-                {logo ? (
-                  <img
-                    src={""}
-                    alt="RGES Innovation Hub Logo"
-                    className="w-10 h-10 md:w-12 md:h-12 rounded-lg object-contain"
-                  />
-                ) : (
-                  <div className="w-10 h-10 bg-slate-900 rounded-lg"></div>
-                )}
+                <img
+                  src={logoImg}
+                  alt="RGES Innovation Hub Logo"
+                  className="w-10 h-10 md:w-12 md:h-12 rounded-lg object-contain"
+                />
               </div>
 
               <div>

@@ -46,28 +46,35 @@ const AboutSection = () => {
     >
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="max-w-3xl mb-16 sm:mb-24">
+        <div className="max-w-3xl mx-auto mb-16 sm:mb-24 text-center">
           <h2
             id="about-heading"
-            className="text-3xl sm:text-4xl md:text-5xl font-bold mb-8 text-slate-900 tracking-tight"
+            className="text-3xl sm:text-4xl md:text-5xl font-bold mb-8 text-slate-900 tracking-tight text-center"
             style={{ fontFamily: "Inter, sans-serif" }}
           >
             About RGES Innovation Hub
           </h2>
 
-          <p
-            className="text-lg md:text-xl text-slate-600 leading-relaxed max-w-2xl"
+         <div className="flex flex-col items-center justify-center text-center">
+  
+
+  <p
+    
+    className="text-lg md:text-xl text-slate-600 max-w-6xl mx-auto leading-relaxed text-center font-medium"
             style={{ fontFamily: "Inter, sans-serif" }}
-          >
-            RGES Innovation Hub is a startup-driven ecosystem built to
-            accelerate ideas into scalable, market-ready digital products.
-            Focused on{" "}
-            <strong className="text-slate-900 font-semibold">
-              Cyber Security, Full-Stack Development, and Artificial
-              Intelligence
-            </strong>
-            .
-          </p>
+  >
+    RGES Innovation Hub is a startup-driven ecosystem built to
+    accelerate ideas into scalable, market-ready digital products.
+    Focused on{" "}
+    <strong className="text-slate-900 font-semibold">
+      Cyber Security, Full-Stack Development, and Artificial
+      Intelligence
+    </strong>
+    .
+  </p>
+</div>
+
+
         </div>
 
         {/* Features Grid */}
