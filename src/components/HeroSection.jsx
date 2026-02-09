@@ -1,11 +1,22 @@
 import React, { useState, useRef, useEffect } from "react";
 import { ArrowRight } from "lucide-react";
 import heroVideo from "../assets/HerSection-bg-video.mp4";
+import mobileVideo from "../assets/mobile-bg-video.mp4";
 
 const HeroSection = () => {
   const text = "Come Fail, Learn and Build";
   const [displayText, setDisplayText] = useState("");
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
   const typingRef = useRef(null);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   useEffect(() => {
     const startTyping = () => {
@@ -47,7 +58,7 @@ const HeroSection = () => {
         playsInline
         className="absolute inset-0 w-full h-full object-cover"
       >
-        <source src={heroVideo} type="video/mp4" />
+        <source src={isMobile ? mobileVideo : heroVideo} type="video/mp4" />
       </video>
 
       {/* Overlay */}
