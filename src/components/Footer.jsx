@@ -1,7 +1,8 @@
 import React from "react";
 import { Mail, Phone, MapPin } from "lucide-react";
+import logoImg from "../assets/logo.jpeg";
 
-const Footer = ({ logo }) => {
+const Footer = () => {
   const quickLinks = [
     { name: "About", href: "#about" },
     { name: "Journey", href: "#journey" },
@@ -19,13 +20,11 @@ const Footer = ({ logo }) => {
       {/* Brand - LEFT */}
       <div className="space-y-4">
         <div className="flex items-center gap-3">
-          {logo && (
-            <img
-              src={logo}
-              alt="RGES Logo"
-              className="h-9 w-auto object-contain brightness-0 invert"
-            />
-          )}
+          <img
+            src={logoImg}
+            alt="RGES Logo"
+            className="h-9 w-auto object-contain"
+          />
           <div>
             <h3 className="text-lg font-semibold">RGES Innovation Hub</h3>
             <p className="text-xs text-slate-400">

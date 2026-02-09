@@ -82,9 +82,6 @@ const JourneySection = () => {
           {/* Gradient Timeline Line - Desktop only */}
           <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-blue-500 via-purple-500 via-pink-500 via-amber-500 to-yellow-400"></div>
 
-          {/* Mobile Timeline Line */}
-          <div className="md:hidden absolute left-4 top-0 bottom-0 w-1 bg-gradient-to-b from-blue-500 via-purple-500 via-pink-500 via-amber-500 to-yellow-400"></div>
-
           {/* Timeline Steps */}
           <div className="space-y-8 md:space-y-20">
             {journeySteps.map((step, index) => {
@@ -136,29 +133,28 @@ const JourneySection = () => {
                     <div className="w-full md:w-5/12"></div>
                   </div>
 
-                  {/* Mobile Layout */}
-                  <div className="md:hidden flex items-start gap-4 pl-16">
-                    {/* Icon */}
-                    <div className="absolute left-0 top-0 relative z-10">
-                      <div
-                        className={`w-12 h-12 rounded-full ${step.bgColor} flex items-center justify-center text-white shadow-lg border-4 border-white transform transition-transform duration-300 active:scale-110`}
-                      >
-                        <Icon className="w-6 h-6" />
+                  {/* Mobile Layout - Card View */}
+                  <div className="md:hidden">
+                    <div className="bg-white p-6 rounded-2xl shadow-md hover:shadow-lg transition-shadow duration-300 border border-slate-100">
+                      <div className="flex items-start gap-4 mb-4">
+                        <div className={`w-14 h-14 rounded-full ${step.bgColor} flex items-center justify-center text-white shadow-lg flex-shrink-0`}>
+                          <Icon className="w-7 h-7" />
+                        </div>
+                        <div className="flex-1">
+                          <h3
+                            className="text-lg font-bold text-slate-900 mb-1"
+                            style={{ fontFamily: "Inter, sans-serif" }}
+                          >
+                            {step.title}
+                          </h3>
+                          <p className="text-slate-600 leading-relaxed text-sm">
+                            {step.description}
+                          </p>
+                        </div>
                       </div>
-                    </div>
-
-                    {/* Card */}
-                    <div className="w-full pt-1">
-                      <div className="bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
-                        <h3
-                          className="text-lg font-bold text-slate-900 mb-2"
-                          style={{ fontFamily: "Inter, sans-serif" }}
-                        >
-                          {step.title}
-                        </h3>
-                        <p className="text-slate-600 leading-relaxed text-sm">
-                          {step.description}
-                        </p>
+                      <div className="flex items-center gap-2 text-blue-600 font-semibold text-sm">
+                        <ArrowRight className="w-4 h-4" />
+                        <span>Learn More</span>
                       </div>
                     </div>
                   </div>
