@@ -1,28 +1,37 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { ArrowRight } from "lucide-react";
 import heroVideo from "../assets/HerSection-bg-video.mp4";
 
 const HeroSection = () => {
   const text = "Come Fail, Learn and Build";
-  const [displayText, setDisplayText] = useState(text);
+  const [displayText, setDisplayText] = useState("");
   const typingRef = useRef(null);
 
-  const startTyping = () => {
-    if (typingRef.current) return;
+  useEffect(() => {
+    const startTyping = () => {
+      setDisplayText("");
+      let i = 0;
 
-    setDisplayText("");
-    let i = 0;
+      typingRef.current = setInterval(() => {
+        i++;
+        setDisplayText(text.slice(0, i));
 
-    typingRef.current = setInterval(() => {
-      i++;
-      setDisplayText(text.slice(0, i));
+        if (i === text.length) {
+          clearInterval(typingRef.current);
+          typingRef.current = null;
+          
+          // Restart animation after 2 seconds
+          setTimeout(startTyping, 2000);
+        }
+      }, 60);
+    };
 
-      if (i === text.length) {
-        clearInterval(typingRef.current);
-        typingRef.current = null;
-      }
-    }, 60);
-  };
+    startTyping();
+
+    return () => {
+      if (typingRef.current) clearInterval(typingRef.current);
+    };
+  }, []);
 
   return (
     <section
@@ -61,8 +70,7 @@ const HeroSection = () => {
         <div className="text-center">
           {/* Badge */}
           <div
-            onMouseEnter={startTyping}
-            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full mb-8 bg-slate-900 border border-slate-800 cursor-pointer"
+            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full mb-8 bg-slate-900 border border-slate-800"
           >
             <span
               className="text-xs font-semibold text-blue-400 uppercase tracking-widest"
