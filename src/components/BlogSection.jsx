@@ -9,7 +9,7 @@ const BlogSection = () => {
       quote: "The best time to plant a tree was 20 years ago. The second best time is now.",
       description:
         "Every great startup begins with courage to pursue a simple idea. Learn how founders overcome challenges, pivot when needed, and build something meaningful.",
-      image: "https://images.unsplash.com/photo-1552661017-47dd95b82f2d?w=600&h=400&fit=crop&q=80",
+      image: "https://images.unsplash.com/photo-1557821552-17105176677c?w=600&h=400&fit=crop&q=80",
       gradient: "from-blue-600 to-blue-400",
     },
     {
