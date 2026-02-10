@@ -103,7 +103,7 @@ const ProgramsSection = ({ onApply }) => {
               >
                 {/* Mobile Layout - Always expanded */}
                 <div className="md:hidden p-6 space-y-4">
-                  <div className="flex items-start justify-between gap-3">
+                  <div className="flex items-start justify-between gap-3 mb-3">
                     <div>
                       <div className="flex items-center gap-2 mb-2">
                         <span className="text-xs font-semibold text-blue-600 uppercase tracking-wider">
@@ -143,34 +143,38 @@ const ProgramsSection = ({ onApply }) => {
                   </div>
 
                   <div className="border-t border-slate-100 pt-4 space-y-3">
-                    <div className="flex justify-between items-center">
-                      <span className="text-slate-500 text-xs uppercase tracking-wider font-medium">
-                        Duration
-                      </span>
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center gap-2 text-slate-500">
+                        <Clock className="w-4 h-4 text-slate-400" />
+                        <span className="text-xs uppercase tracking-wider font-medium">Duration</span>
+                      </div>
                       <span className="text-slate-900 text-sm font-semibold">
                         {program.duration}
                       </span>
                     </div>
-                    <div className="flex justify-between items-center">
-                      <span className="text-slate-500 text-xs uppercase tracking-wider font-medium">
-                        Start Date
-                      </span>
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center gap-2 text-slate-500">
+                        <Calendar className="w-4 h-4 text-slate-400" />
+                        <span className="text-xs uppercase tracking-wider font-medium">Start Date</span>
+                      </div>
                       <span className="text-slate-900 text-sm font-semibold">
                         {program.startDate}
                       </span>
                     </div>
-                    <div className="flex justify-between items-center">
-                      <span className="text-slate-500 text-xs uppercase tracking-wider font-medium">
-                        Application Deadline
-                      </span>
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center gap-2 text-slate-500">
+                        <Calendar className="w-4 h-4 text-slate-400" />
+                        <span className="text-xs uppercase tracking-wider font-medium">Application Deadline</span>
+                      </div>
                       <span className="text-slate-900 text-sm font-semibold">
                         {program.deadline}
                       </span>
                     </div>
-                    <div className="flex justify-between items-center">
-                      <span className="text-slate-500 text-xs uppercase tracking-wider font-medium">
-                        Participants
-                      </span>
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center gap-2 text-slate-500">
+                        <Users className="w-4 h-4 text-slate-400" />
+                        <span className="text-xs uppercase tracking-wider font-medium">Participants</span>
+                      </div>
                       <span className="text-slate-900 text-sm font-semibold">
                         {program.participants}
                       </span>
