@@ -73,7 +73,7 @@ const PartnersSection = () => {
                 </div>
               </a>
               </div>
-
+            ))}
           </div>
         </div>
 
