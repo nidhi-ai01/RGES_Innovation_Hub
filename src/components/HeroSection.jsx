@@ -121,13 +121,16 @@ const HeroSection = () => {
               Validate Your Idea
             </button>
 
-            <button
-              className="w-full sm:w-auto px-8 py-4 bg-transparent hover:bg-slate-900 text-white border border-slate-700 hover:border-slate-600 rounded-xl font-semibold text-base transition-all duration-200 flex items-center justify-center gap-2"
+            <a
+              href="https://discord.gg/WnC9QRfT"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full sm:w-auto px-8 py-4 bg-transparent hover:bg-slate-900 text-white border border-slate-700 hover:border-slate-600 rounded-xl font-semibold text-base transition-all duration-200 flex items-center justify-center gap-2 cursor-pointer"
               style={{ fontFamily: "Inter, sans-serif" }}
             >
               Join the Community
               <ArrowRight className="w-4 h-4" />
-            </button>
+            </a>
           </div>
         </div>
       </div>
