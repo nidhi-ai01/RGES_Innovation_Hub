@@ -147,43 +147,43 @@ const ProgramsSection = ({ onApply }) => {
                     </div>
 
                     {/* Right side - Details sidebar */}
-                    <div className="w-32 flex-shrink-0 space-y-3 text-right">
-                      <div className="text-right">
-                        <div className="flex items-center justify-end gap-2 mb-1">
-                          <Clock className="w-4 h-4 text-slate-400" />
+                    <div className="flex-shrink-0 space-y-3">
+                      <div>
+                        <div className="flex items-center gap-2 mb-1">
+                          <Clock className="w-4 h-4 text-slate-400 flex-shrink-0" />
+                          <div className="text-xs uppercase tracking-wider font-medium text-slate-500">Duration</div>
                         </div>
-                        <div className="text-xs uppercase tracking-wider font-medium text-slate-500">Duration</div>
-                        <span className="text-slate-900 text-sm font-semibold block">
+                        <span className="text-slate-900 text-sm font-semibold block ml-6">
                           {program.duration}
                         </span>
                       </div>
 
-                      <div className="text-right">
-                        <div className="flex items-center justify-end gap-2 mb-1">
-                          <Calendar className="w-4 h-4 text-slate-400" />
+                      <div>
+                        <div className="flex items-center gap-2 mb-1">
+                          <Calendar className="w-4 h-4 text-slate-400 flex-shrink-0" />
+                          <div className="text-xs uppercase tracking-wider font-medium text-slate-500">Start Date</div>
                         </div>
-                        <div className="text-xs uppercase tracking-wider font-medium text-slate-500">Start Date</div>
-                        <span className="text-slate-900 text-sm font-semibold block">
+                        <span className="text-slate-900 text-sm font-semibold block ml-6">
                           {program.startDate}
                         </span>
                       </div>
 
-                      <div className="text-right">
-                        <div className="flex items-center justify-end gap-2 mb-1">
-                          <Calendar className="w-4 h-4 text-slate-400" />
+                      <div>
+                        <div className="flex items-center gap-2 mb-1">
+                          <Calendar className="w-4 h-4 text-slate-400 flex-shrink-0" />
+                          <div className="text-xs uppercase tracking-wider font-medium text-slate-500">Deadline</div>
                         </div>
-                        <div className="text-xs uppercase tracking-wider font-medium text-slate-500">Application Deadline</div>
-                        <span className="text-slate-900 text-sm font-semibold block">
+                        <span className="text-slate-900 text-sm font-semibold block ml-6">
                           {program.deadline}
                         </span>
                       </div>
 
-                      <div className="text-right">
-                        <div className="flex items-center justify-end gap-2 mb-1">
-                          <Users className="w-4 h-4 text-slate-400" />
+                      <div>
+                        <div className="flex items-center gap-2 mb-1">
+                          <Users className="w-4 h-4 text-slate-400 flex-shrink-0" />
+                          <div className="text-xs uppercase tracking-wider font-medium text-slate-500">Participants</div>
                         </div>
-                        <div className="text-xs uppercase tracking-wider font-medium text-slate-500">Participants</div>
-                        <span className="text-slate-900 text-sm font-semibold block">
+                        <span className="text-slate-900 text-sm font-semibold block ml-6">
                           {program.participants}
                         </span>
                       </div>
