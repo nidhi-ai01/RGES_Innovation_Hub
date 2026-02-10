@@ -27,7 +27,7 @@ const BlogSection = () => {
       quote: "Success is not final, failure is not fatal: it is the courage to continue that counts.",
       description:
         "Building a startup is a marathon. Founders face rejection and doubt. What separates successful entrepreneurs? Unwavering motivation and resilience.",
-      image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&h=400&fit=crop&q=80",
+      image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=600&h=400&fit=crop&q=80",
       gradient: "from-green-600 to-green-400",
     },
   ];
