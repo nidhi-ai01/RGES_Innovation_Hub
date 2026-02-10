@@ -8,7 +8,7 @@ const BlogSection = () => {
       title: "From Zero to Hero: The Startup Journey",
       quote: "The best time to plant a tree was 20 years ago. The second best time is now.",
       description:
-        "Every great startup begins with a simple idea and the courage to pursue it. Learn how founders overcome challenges, pivot when needed, and build something meaningful. Your startup journey starts with the first step—the innovation begins when you decide to take action.",
+        "Every great startup begins with courage to pursue a simple idea. Learn how founders overcome challenges, pivot when needed, and build something meaningful.",
       image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&h=400&fit=crop&q=80",
       gradient: "from-blue-600 to-blue-400",
     },
@@ -17,7 +17,7 @@ const BlogSection = () => {
       title: "The Power of Innovation in Solving Real Problems",
       quote: "Innovation distinguishes between a leader and a follower.",
       description:
-        "Innovation isn't just about technology—it's about solving real-world problems in creative ways. Discover how successful startups identify pain points, validate solutions, and create products that people actually want. Innovation thrives when you focus on the customer first.",
+        "Innovation means solving real-world problems creatively. Discover how successful startups identify pain points and create products people actually want.",
       image: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=600&h=400&fit=crop&q=80",
       gradient: "from-purple-600 to-purple-400",
     },
@@ -26,7 +26,7 @@ const BlogSection = () => {
       title: "Motivation Matters: Why Most Startups Fail & How to Succeed",
       quote: "Success is not final, failure is not fatal: it is the courage to continue that counts.",
       description:
-        "Building a startup is a marathon, not a sprint. Founders face rejection, setbacks, and moments of doubt. What separates successful entrepreneurs from the rest? Unwavering motivation, resilience, and a clear vision. Learn how to stay motivated when the odds seem against you.",
+        "Building a startup is a marathon. Founders face rejection and doubt. What separates successful entrepreneurs? Unwavering motivation and resilience.",
       image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&h=400&fit=crop&q=80",
       gradient: "from-green-600 to-green-400",
     },
@@ -110,7 +110,7 @@ const BlogSection = () => {
                 </h3>
 
                 {/* Description */}
-                <p className="text-slate-600 text-sm md:text-base leading-relaxed mb-5 line-clamp-3 flex-grow group-hover:text-slate-700 transition-colors duration-300">
+                <p className="text-slate-600 text-sm md:text-base leading-relaxed mb-5 line-clamp-2 flex-grow group-hover:text-slate-700 transition-colors duration-300">
                   {blog.description}
                 </p>
 
