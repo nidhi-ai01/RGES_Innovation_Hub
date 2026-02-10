@@ -121,7 +121,7 @@ const ProgramsSection = ({ onApply }) => {
                         )}
                       </div>
                       <h3
-                        className="text-lg font-bold text-slate-900"
+                        className="text-base font-bold text-slate-900"
                         style={{ fontFamily: "Inter, sans-serif" }}
                       >
                         {program.name}
@@ -132,13 +132,13 @@ const ProgramsSection = ({ onApply }) => {
                   <div className="flex gap-6">
                     {/* Left side - Description and Highlights */}
                     <div className="flex-1">
-                      <p className="text-slate-600 text-sm leading-relaxed mb-4">
+                      <p className="text-slate-600 text-xs leading-relaxed mb-4">
                         {program.description}
                       </p>
 
                       <div className="space-y-2">
                         {program.highlights.map((highlight, idx) => (
-                          <div key={idx} className="flex items-center gap-2 text-sm text-slate-600">
+                          <div key={idx} className="flex items-center gap-2 text-xs text-slate-600">
                             <ArrowRight className="w-4 h-4 text-blue-600 flex-shrink-0" />
                             <span>{highlight}</span>
                           </div>
@@ -220,13 +220,13 @@ const ProgramsSection = ({ onApply }) => {
                           )}
                         </div>
                         <h3
-                          className="text-2xl font-bold text-slate-900 mb-2"
+                          className="text-lg font-bold text-slate-900 mb-2"
                           style={{ fontFamily: "Inter, sans-serif" }}
                         >
                           {program.name}
                         </h3>
                         {!isExpanded && (
-                          <p className="text-slate-500 text-sm md:text-base line-clamp-1">
+                          <p className="text-slate-500 text-xs md:text-sm line-clamp-1">
                             {program.description}
                           </p>
                         )}
