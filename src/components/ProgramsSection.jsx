@@ -10,7 +10,7 @@ import {
 } from "lucide-react";
 
 const ProgramsSection = ({ onApply }) => {
-  const [expandedProgram, setExpandedProgram] = useState(0);
+  const [expandedProgram, setExpandedProgram] = useState(-1);
 
   const programs = [
     {
@@ -192,7 +192,7 @@ const ProgramsSection = ({ onApply }) => {
                 <div className="hidden md:block">
                   <div
                     className="p-6 sm:p-8 cursor-pointer"
-                    onClick={() => setExpandedProgram(index)}
+                    onClick={() => setExpandedProgram(isExpanded ? -1 : index)}
                   >
                     <div className="flex flex-col md:flex-row md:items-center justify-between gap-6">
                       <div className="flex-1">
