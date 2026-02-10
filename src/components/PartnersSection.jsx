@@ -33,17 +33,17 @@ const PartnersSection = () => {
         </div>
 
         {/* Partners Grid */}
-        <div className="flex justify-center">
-          <div className="grid grid-cols-1 gap-8 w-full max-w-2xl justify-items-center">
+        <div className="flex justify-center items-center w-full">
+          <div className="grid grid-cols-1 gap-8 justify-center w-full">
 
             {partners.map((partner, index) => (
-              <a
-                key={index}
-                href={partner.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group w-full max-w-sm bg-white rounded-2xl border border-slate-200 p-8 flex flex-col items-center text-center shadow-md hover:shadow-xl hover:border-blue-600 transition-all duration-300"
-              >
+              <div key={index} className="flex justify-center">
+                <a
+                  href={partner.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group w-full max-w-md bg-white rounded-2xl border border-slate-200 p-8 flex flex-col items-center text-center shadow-md hover:shadow-xl hover:border-blue-600 transition-all duration-300"
+                >
                 {/* Logo Container */}
                 <div className="w-full h-32 flex items-center justify-center mb-6 bg-slate-50 rounded-xl group-hover:bg-blue-50 transition-colors duration-300">
                   <img
@@ -72,7 +72,7 @@ const PartnersSection = () => {
                   <ExternalLink size={16} />
                 </div>
               </a>
-            ))}
+              </div>
 
           </div>
         </div>
