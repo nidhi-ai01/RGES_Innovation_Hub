@@ -190,15 +190,13 @@ const ProgramsSection = ({ onApply }) => {
                     </div>
                   </div>
 
-                  {program.status === "Open" && (
-                    <button
-                      onClick={onApply}
-                      className="w-full inline-flex justify-center items-center gap-2 px-4 py-3 bg-slate-900 hover:bg-slate-800 text-white rounded-lg font-semibold transition-colors mt-4"
-                    >
-                      Apply Now
-                      <ArrowRight className="w-4 h-4" />
-                    </button>
-                  )}
+                  <button
+                    onClick={onApply}
+                    className="w-full inline-flex justify-center items-center gap-2 px-4 py-3 bg-slate-900 hover:bg-slate-800 text-white rounded-lg font-semibold transition-colors mt-4"
+                  >
+                    Apply Now
+                    <ArrowRight className="w-4 h-4" />
+                  </button>
                 </div>
 
                 {/* Desktop Layout - Expandable */}
@@ -307,15 +305,13 @@ const ProgramsSection = ({ onApply }) => {
                             </div>
                           </div>
 
-                          {program.status === "Open" && (
-                            <button
-                              onClick={onApply}
-                              className="w-full inline-flex justify-center items-center gap-2 px-6 py-3 bg-slate-900 hover:bg-slate-800 text-white rounded-lg font-semibold transition-colors"
-                            >
-                              Apply Now
-                              <ArrowRight className="w-4 h-4" />
-                            </button>
-                          )}
+                          <button
+                            onClick={onApply}
+                            className="w-full inline-flex justify-center items-center gap-2 px-6 py-3 bg-slate-900 hover:bg-slate-800 text-white rounded-lg font-semibold transition-colors"
+                          >
+                            Apply Now
+                            <ArrowRight className="w-4 h-4" />
+                          </button>
                         </div>
                       </div>
                     </div>
