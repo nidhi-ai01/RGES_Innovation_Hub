@@ -5,35 +5,32 @@ const BlogSection = () => {
   const blogs = [
     {
       id: 1,
-      title: "Launching Our First Cohort",
+      title: "From Zero to Hero: The Startup Journey",
       description:
-        "We're excited to announce the launch of our inaugural startup accelerator cohort! Selected 15 innovative teams from across India will be joining us for an intensive 12-week program.",
+        "Every great startup begins with a simple idea and the courage to pursue it. Learn how founders overcome challenges, pivot when needed, and build something meaningful. Your startup journey starts with the first step—the innovation begins when you decide to take action.",
       date: "Jan 2025",
       location: "Bangalore",
       image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&h=400&fit=crop&q=80",
-      photos: 5,
       gradient: "from-blue-600 to-blue-400",
     },
     {
       id: 2,
-      title: "Mentorship Workshop Success",
+      title: "The Power of Innovation in Solving Real Problems",
       description:
-        "Our first mentorship workshop brought together 30+ entrepreneurs and industry experts. The session focused on market validation and pitch perfection, providing valuable insights for early-stage startups.",
+        "Innovation isn't just about technology—it's about solving real-world problems in creative ways. Discover how successful startups identify pain points, validate solutions, and create products that people actually want. Innovation thrives when you focus on the customer first.",
       date: "Dec 2024",
-      location: "Virtual",
+      location: "Innovation Hub",
       image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&h=400&fit=crop&q=80",
-      photos: 8,
       gradient: "from-purple-600 to-purple-400",
     },
     {
       id: 3,
-      title: "Partnership with Tech Leaders",
+      title: "Motivation Matters: Why Most Startups Fail & How to Succeed",
       description:
-        "RGES Innovation Hub partners with leading technology companies to provide startups with access to cutting-edge tools, resources, and mentorship. Excited to announce our collaboration with industry pioneers.",
+        "Building a startup is a marathon, not a sprint. Founders face rejection, setbacks, and moments of doubt. What separates successful entrepreneurs from the rest? Unwavering motivation, resilience, and a clear vision. Learn how to stay motivated when the odds seem against you.",
       date: "Nov 2024",
-      location: "Delhi",
+      location: "Founder Community",
       image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&h=400&fit=crop&q=80",
-      photos: 6,
       gradient: "from-green-600 to-green-400",
     },
   ];
@@ -93,12 +90,6 @@ const BlogSection = () => {
                 
                 {/* Animated overlay on hover */}
                 <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-500"></div>
-
-                {/* Photo Count Badge - Enhanced */}
-                <div className="absolute top-3 right-3 bg-slate-900/85 backdrop-blur-md text-white px-3 py-1.5 rounded-full text-xs font-semibold flex items-center gap-1.5 shadow-lg transform group-hover:scale-110 group-hover:shadow-xl transition-all duration-300">
-                  <span className="animate-pulse">📷</span>
-                  <span>{blog.photos} Photos</span>
-                </div>
               </div>
 
               {/* Content Container */}
