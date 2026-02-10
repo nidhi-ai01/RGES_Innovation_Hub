@@ -8,7 +8,7 @@ const PartnersSection = () => {
       name: "IntelliRMS",
       logo: intellirmLogo,
       link: "https://intellirms.com",
-      description: "Recruitment Management System",
+      description: "Smart Solutions for Risk Management",
     },
   ];
 
