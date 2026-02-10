@@ -23,6 +23,8 @@ const WhatWeOfferSection = () => {
         "Competitive analysis",
         "MVP planning",
       ],
+      gradient: "from-blue-500 to-blue-600",
+      bgGradient: "from-blue-50 to-blue-100",
     },
     {
       icon: Users,
@@ -35,6 +37,8 @@ const WhatWeOfferSection = () => {
         "Problem solving",
         "Network access",
       ],
+      gradient: "from-purple-500 to-purple-600",
+      bgGradient: "from-purple-50 to-purple-100",
     },
     {
       icon: BookOpen,
@@ -47,6 +51,8 @@ const WhatWeOfferSection = () => {
         "Team building",
         "Go-to-market strategy",
       ],
+      gradient: "from-pink-500 to-rose-600",
+      bgGradient: "from-pink-50 to-rose-100",
     },
     {
       icon: DollarSign,
@@ -59,6 +65,8 @@ const WhatWeOfferSection = () => {
         "Funding readiness",
         "Cap table planning",
       ],
+      gradient: "from-amber-500 to-orange-600",
+      bgGradient: "from-amber-50 to-orange-100",
     },
     {
       icon: Calendar,
@@ -71,6 +79,8 @@ const WhatWeOfferSection = () => {
         "Industry events",
         "Community support",
       ],
+      gradient: "from-green-500 to-teal-600",
+      bgGradient: "from-green-50 to-teal-100",
     },
     {
       icon: ArrowRight,
@@ -83,6 +93,8 @@ const WhatWeOfferSection = () => {
         "Cloud credits",
         "Hiring assistance",
       ],
+      gradient: "from-indigo-500 to-blue-600",
+      bgGradient: "from-indigo-50 to-blue-100",
     },
   ];
 
@@ -117,33 +129,46 @@ const WhatWeOfferSection = () => {
             return (
               <div
                 key={index}
-                className="bg-white rounded-xl border border-slate-200 p-8 hover:shadow-lg transition-shadow duration-300 group"
+                className="bg-white rounded-xl border border-slate-200 overflow-hidden hover:shadow-lg transition-shadow duration-300 group"
               >
-                <div className="w-12 h-12 bg-slate-100 rounded-lg flex items-center justify-center mb-6 text-slate-900 group-hover:bg-slate-900 group-hover:text-white transition-colors duration-300">
-                  <Icon className="w-6 h-6" />
+                {/* Icon Section with Gradient Background */}
+                <div
+                  className={`bg-gradient-to-br ${offering.bgGradient} p-8 flex items-center justify-center relative overflow-hidden`}
+                >
+                  {/* Decorative circles */}
+                  <div className="absolute top-0 right-0 w-32 h-32 bg-white/20 rounded-full -mr-16 -mt-16"></div>
+                  <div className="absolute bottom-0 left-0 w-24 h-24 bg-white/10 rounded-full -ml-12 -mb-12"></div>
+                  
+                  {/* Icon */}
+                  <div className={`bg-gradient-to-br ${offering.gradient} p-6 rounded-2xl text-white shadow-lg relative z-10 transform group-hover:scale-110 transition-transform duration-300`}>
+                    <Icon className="w-8 h-8" />
+                  </div>
                 </div>
 
-                <h3
-                  className="text-xl font-bold text-slate-900 mb-4"
-                  style={{ fontFamily: "Inter, sans-serif" }}
-                >
-                  {offering.title}
-                </h3>
-                <p className="text-slate-600 mb-8 leading-relaxed mb-6 min-h-[48px]">
-                  {offering.description}
-                </p>
+                {/* Content Section */}
+                <div className="p-8">
+                  <h3
+                    className="text-xl font-bold text-slate-900 mb-4"
+                    style={{ fontFamily: "Inter, sans-serif" }}
+                  >
+                    {offering.title}
+                  </h3>
+                  <p className="text-slate-600 mb-8 leading-relaxed min-h-[48px]">
+                    {offering.description}
+                  </p>
 
-                <ul className="space-y-3 pt-6 border-t border-slate-100">
-                  {offering.features.map((feature, idx) => (
-                    <li
-                      key={idx}
-                      className="flex items-start gap-3 text-sm text-slate-600"
-                    >
-                      <CheckCircle className="w-4 h-4 text-slate-400 mt-0.5 flex-shrink-0" />
-                      <span>{feature}</span>
-                    </li>
-                  ))}
-                </ul>
+                  <ul className="space-y-3 pt-6 border-t border-slate-100">
+                    {offering.features.map((feature, idx) => (
+                      <li
+                        key={idx}
+                        className="flex items-start gap-3 text-sm text-slate-600"
+                      >
+                        <CheckCircle className="w-4 h-4 text-slate-400 mt-0.5 flex-shrink-0" />
+                        <span>{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               </div>
             );
           })}
