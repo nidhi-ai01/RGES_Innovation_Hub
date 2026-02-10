@@ -7,6 +7,7 @@ import {
   TrendingUp,
   ArrowRight,
 } from "lucide-react";
+import journeyBg from "../assets/journey-bg.jpg";
 
 const JourneySection = () => {
   const journeySteps = [
@@ -57,7 +58,16 @@ const JourneySection = () => {
       id="journey"
       aria-labelledby="journey-heading"
       className="py-20 md:py-32 bg-white relative overflow-hidden"
+      style={{
+        backgroundImage: `url(${journeyBg})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundAttachment: "fixed",
+      }}
     >
+      {/* White Gradient Overlay */}
+      <div className="absolute inset-0 bg-gradient-to-b from-white/95 via-white/90 to-white/85"></div>
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Header */}
         <div className="mb-16 sm:mb-24 text-center max-w-3xl mx-auto">
