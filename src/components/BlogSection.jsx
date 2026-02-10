@@ -1,35 +1,32 @@
 import React from "react";
-import { ArrowRight, Calendar, MapPin, Sparkles } from "lucide-react";
+import { ArrowRight, Sparkles, Quote } from "lucide-react";
 
 const BlogSection = () => {
   const blogs = [
     {
       id: 1,
       title: "From Zero to Hero: The Startup Journey",
+      quote: "The best time to plant a tree was 20 years ago. The second best time is now.",
       description:
         "Every great startup begins with a simple idea and the courage to pursue it. Learn how founders overcome challenges, pivot when needed, and build something meaningful. Your startup journey starts with the first step—the innovation begins when you decide to take action.",
-      date: "Jan 2025",
-      location: "Bangalore",
       image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&h=400&fit=crop&q=80",
       gradient: "from-blue-600 to-blue-400",
     },
     {
       id: 2,
       title: "The Power of Innovation in Solving Real Problems",
+      quote: "Innovation distinguishes between a leader and a follower.",
       description:
         "Innovation isn't just about technology—it's about solving real-world problems in creative ways. Discover how successful startups identify pain points, validate solutions, and create products that people actually want. Innovation thrives when you focus on the customer first.",
-      date: "Dec 2024",
-      location: "Innovation Hub",
-      image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&h=400&fit=crop&q=80",
+      image: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=600&h=400&fit=crop&q=80",
       gradient: "from-purple-600 to-purple-400",
     },
     {
       id: 3,
       title: "Motivation Matters: Why Most Startups Fail & How to Succeed",
+      quote: "Success is not final, failure is not fatal: it is the courage to continue that counts.",
       description:
         "Building a startup is a marathon, not a sprint. Founders face rejection, setbacks, and moments of doubt. What separates successful entrepreneurs from the rest? Unwavering motivation, resilience, and a clear vision. Learn how to stay motivated when the odds seem against you.",
-      date: "Nov 2024",
-      location: "Founder Community",
       image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&h=400&fit=crop&q=80",
       gradient: "from-green-600 to-green-400",
     },
@@ -94,15 +91,13 @@ const BlogSection = () => {
 
               {/* Content Container */}
               <div className="p-6 md:p-7 flex flex-col h-full">
-                {/* Date and Location */}
-                <div className="flex items-center gap-4 mb-4 text-slate-500 text-sm">
-                  <div className="flex items-center gap-1.5 group/date">
-                    <Calendar className="w-4 h-4 group-hover/date:text-blue-600 transition-colors duration-300" />
-                    <span className="group-hover/date:text-slate-700 transition-colors duration-300">{blog.date}</span>
-                  </div>
-                  <div className="flex items-center gap-1.5 group/location">
-                    <MapPin className="w-4 h-4 group-hover/location:text-blue-600 transition-colors duration-300" />
-                    <span className="group-hover/location:text-slate-700 transition-colors duration-300">{blog.location}</span>
+                {/* Quote */}
+                <div className="mb-4 pb-4 border-l-3 border-blue-600 pl-4">
+                  <div className="flex items-start gap-2">
+                    <Quote className="w-4 h-4 text-blue-600 flex-shrink-0 mt-0.5" />
+                    <p className="text-sm italic text-slate-600 group-hover:text-slate-700 transition-colors duration-300">
+                      "{blog.quote}"
+                    </p>
                   </div>
                 </div>
 
