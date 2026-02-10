@@ -103,7 +103,7 @@ const ProgramsSection = ({ onApply }) => {
               >
                 {/* Mobile Layout - Always expanded */}
                 <div className="md:hidden p-6 space-y-4">
-                  <div className="flex items-start justify-between gap-3 mb-3">
+                  <div className="flex items-start justify-between gap-4 mb-3">
                     <div>
                       <div className="flex items-center gap-2 mb-2">
                         <span className="text-xs font-semibold text-blue-600 uppercase tracking-wider">
@@ -129,62 +129,71 @@ const ProgramsSection = ({ onApply }) => {
                     </div>
                   </div>
 
-                  <p className="text-slate-600 text-sm leading-relaxed">
-                    {program.description}
-                  </p>
+                  <div className="flex gap-6">
+                    {/* Left side - Description and Highlights */}
+                    <div className="flex-1">
+                      <p className="text-slate-600 text-sm leading-relaxed mb-4">
+                        {program.description}
+                      </p>
 
-                  <div className="space-y-2">
-                    {program.highlights.map((highlight, idx) => (
-                      <div key={idx} className="flex items-center gap-2 text-sm text-slate-600">
-                        <ArrowRight className="w-4 h-4 text-blue-600 flex-shrink-0" />
-                        <span>{highlight}</span>
+                      <div className="space-y-2">
+                        {program.highlights.map((highlight, idx) => (
+                          <div key={idx} className="flex items-center gap-2 text-sm text-slate-600">
+                            <ArrowRight className="w-4 h-4 text-blue-600 flex-shrink-0" />
+                            <span>{highlight}</span>
+                          </div>
+                        ))}
                       </div>
-                    ))}
-                  </div>
+                    </div>
 
-                  <div className="border-t border-slate-100 pt-4 space-y-3">
-                    <div className="flex items-center justify-between">
-                      <div className="flex items-center gap-2 text-slate-500">
-                        <Clock className="w-4 h-4 text-slate-400" />
-                        <span className="text-xs uppercase tracking-wider font-medium">Duration</span>
+                    {/* Right side - Details sidebar */}
+                    <div className="w-32 flex-shrink-0 space-y-3 text-right">
+                      <div className="text-right">
+                        <div className="flex items-center justify-end gap-2 mb-1">
+                          <Clock className="w-4 h-4 text-slate-400" />
+                        </div>
+                        <div className="text-xs uppercase tracking-wider font-medium text-slate-500">Duration</div>
+                        <span className="text-slate-900 text-sm font-semibold block">
+                          {program.duration}
+                        </span>
                       </div>
-                      <span className="text-slate-900 text-sm font-semibold">
-                        {program.duration}
-                      </span>
-                    </div>
-                    <div className="flex items-center justify-between">
-                      <div className="flex items-center gap-2 text-slate-500">
-                        <Calendar className="w-4 h-4 text-slate-400" />
-                        <span className="text-xs uppercase tracking-wider font-medium">Start Date</span>
+
+                      <div className="text-right">
+                        <div className="flex items-center justify-end gap-2 mb-1">
+                          <Calendar className="w-4 h-4 text-slate-400" />
+                        </div>
+                        <div className="text-xs uppercase tracking-wider font-medium text-slate-500">Start Date</div>
+                        <span className="text-slate-900 text-sm font-semibold block">
+                          {program.startDate}
+                        </span>
                       </div>
-                      <span className="text-slate-900 text-sm font-semibold">
-                        {program.startDate}
-                      </span>
-                    </div>
-                    <div className="flex items-center justify-between">
-                      <div className="flex items-center gap-2 text-slate-500">
-                        <Calendar className="w-4 h-4 text-slate-400" />
-                        <span className="text-xs uppercase tracking-wider font-medium">Application Deadline</span>
+
+                      <div className="text-right">
+                        <div className="flex items-center justify-end gap-2 mb-1">
+                          <Calendar className="w-4 h-4 text-slate-400" />
+                        </div>
+                        <div className="text-xs uppercase tracking-wider font-medium text-slate-500">Application Deadline</div>
+                        <span className="text-slate-900 text-sm font-semibold block">
+                          {program.deadline}
+                        </span>
                       </div>
-                      <span className="text-slate-900 text-sm font-semibold">
-                        {program.deadline}
-                      </span>
-                    </div>
-                    <div className="flex items-center justify-between">
-                      <div className="flex items-center gap-2 text-slate-500">
-                        <Users className="w-4 h-4 text-slate-400" />
-                        <span className="text-xs uppercase tracking-wider font-medium">Participants</span>
+
+                      <div className="text-right">
+                        <div className="flex items-center justify-end gap-2 mb-1">
+                          <Users className="w-4 h-4 text-slate-400" />
+                        </div>
+                        <div className="text-xs uppercase tracking-wider font-medium text-slate-500">Participants</div>
+                        <span className="text-slate-900 text-sm font-semibold block">
+                          {program.participants}
+                        </span>
                       </div>
-                      <span className="text-slate-900 text-sm font-semibold">
-                        {program.participants}
-                      </span>
                     </div>
                   </div>
 
                   {program.status === "Open" && (
                     <button
                       onClick={onApply}
-                      className="w-full inline-flex justify-center items-center gap-2 px-4 py-3 bg-slate-900 hover:bg-slate-800 text-white rounded-lg font-semibold transition-colors mt-2"
+                      className="w-full inline-flex justify-center items-center gap-2 px-4 py-3 bg-slate-900 hover:bg-slate-800 text-white rounded-lg font-semibold transition-colors mt-4"
                     >
                       Apply Now
                       <ArrowRight className="w-4 h-4" />
