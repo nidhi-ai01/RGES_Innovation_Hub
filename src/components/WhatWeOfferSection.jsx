@@ -6,13 +6,16 @@ import {
   DollarSign,
   Calendar,
   ArrowRight,
+  Sparkles,
 } from "lucide-react";
 
 const WhatWeOfferSection = () => {
   const [activeCard, setActiveCard] = useState(null);
+  const [hoveredCard, setHoveredCard] = useState(null);
 
   const offerings = [
     {
+      id: 1,
       icon: CheckCircle,
       title: "Idea Validation",
       description:
@@ -27,6 +30,7 @@ const WhatWeOfferSection = () => {
       bgGradient: "from-blue-50 to-blue-100",
     },
     {
+      id: 2,
       icon: Users,
       title: "Founder Mentorship",
       description:
@@ -41,6 +45,7 @@ const WhatWeOfferSection = () => {
       bgGradient: "from-purple-50 to-purple-100",
     },
     {
+      id: 3,
       icon: BookOpen,
       title: "Startup Bootcamps",
       description:
@@ -55,6 +60,7 @@ const WhatWeOfferSection = () => {
       bgGradient: "from-pink-50 to-rose-100",
     },
     {
+      id: 4,
       icon: DollarSign,
       title: "Investor Access",
       description:
@@ -69,6 +75,7 @@ const WhatWeOfferSection = () => {
       bgGradient: "from-amber-50 to-orange-100",
     },
     {
+      id: 5,
       icon: Calendar,
       title: "Demo Days",
       description:
@@ -83,6 +90,7 @@ const WhatWeOfferSection = () => {
       bgGradient: "from-green-50 to-teal-100",
     },
     {
+      id: 6,
       icon: ArrowRight,
       title: "And Much More",
       description:
