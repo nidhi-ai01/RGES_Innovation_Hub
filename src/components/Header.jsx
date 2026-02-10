@@ -28,6 +28,7 @@ const Header = ({ onApplyClick }) => {
     { id: "about", label: "About" },
     { id: "journey", label: "Journey" },
     { id: "programs", label: "Programs" },
+    { id: "blog", label: "Blog" },
     { id: "partners", label: "Partners" },
   ];
 
