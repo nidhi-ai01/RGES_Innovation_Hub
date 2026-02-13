@@ -8,6 +8,8 @@ import WhoWeSupportSection from "./components/WhoWeSupportSection.jsx";
 import JourneySection from "./components/JourneySection.jsx";
 import WhatWeOfferSection from "./components/WhatWeOfferSection.jsx";
 import ProgramsSection from "./components/ProgramsSection.jsx";
+import AchieveSection from "./components/AchieveSection.jsx";
+import GallerySection from "./components/GallerySection.jsx";
 import BlogSection from "./components/BlogSection.jsx";
 import PartnersSection from "./components/PartnersSection.jsx";
 import CTASection from "./components/CTASection.jsx";
@@ -33,6 +35,8 @@ function App() {
       <JourneySection />
       <WhatWeOfferSection />
       <ProgramsSection onApply={() => setIsModalOpen(true)} />
+      <AchieveSection />
+      <GallerySection />
       <BlogSection />
       <PartnersSection intellirmLogo={intellirmLogo} />
       <CTASection />
