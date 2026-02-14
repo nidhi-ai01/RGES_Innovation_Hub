@@ -1,5 +1,6 @@
 import "./App.css";
 import { useState } from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import Header from "./components/Header.jsx";
 import HeroSection from "./components/HeroSection.jsx";
@@ -14,19 +15,14 @@ import CTASection from "./components/CTASection.jsx";
 import Footer from "./components/Footer.jsx";
 import { ApplicationModal } from "./components/ApplicationModal.jsx";
 import ChatbotButton from "./components/ChatbotButton.jsx";
+import GalleryPage from "./components/GalleryPage";
 
 // Import images
-import intellirmLogo from "./assets/intellirmLogo.jpg";  
+import intellirmLogo from "./assets/intellirmLogo.jpg";
 
-function App() {
-  const [isModalOpen, setIsModalOpen] = useState(false);
-
+function Home({ setIsModalOpen }) {
   return (
     <>
-      {/* Header */}
-      <Header onApplyClick={() => setIsModalOpen(true)} logo={""} />
-
-      {/* Sections (UNCHANGED) */}
       <HeroSection />
       <AboutSection />
       <WhoWeSupportSection />
@@ -36,17 +32,32 @@ function App() {
       <BlogSection />
       <PartnersSection intellirmLogo={intellirmLogo} />
       <CTASection />
+    </>
+  );
+}
+
+function App() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  return (
+    <Router>
+      {/* Header always visible */}
+      <Header onApplyClick={() => setIsModalOpen(true)} logo={""} />
+
+      <Routes>
+        <Route path="/" element={<Home setIsModalOpen={setIsModalOpen} />} />
+        <Route path="/gallery" element={<GalleryPage />} />
+      </Routes>
+
       <Footer />
 
-      {/* Google Form Modal */}
       <ApplicationModal
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}
       />
 
-      {/* Chatbot Button */}
       <ChatbotButton />
-    </>
+    </Router>
   );
 }
 

@@ -1,11 +1,15 @@
 import React, { useState, useEffect } from "react";
 import { Menu, X, ArrowRight } from "lucide-react";
 import logoImg from "../assets/logo.jpeg";
+import { Link, useNavigate } from "react-router-dom";
+
 
 const Header = ({ onApplyClick }) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState("");
+  const navigate = useNavigate();
+
 
   useEffect(() => {
     const handleScroll = () => {
@@ -29,6 +33,7 @@ const Header = ({ onApplyClick }) => {
     { id: "journey", label: "Journey" },
     { id: "programs", label: "Programs" },
     { id: "blog", label: "Blog" },
+    {id: "gallery", label: "Gallery" },
     { id: "partners", label: "Partners" },
   ];
 
@@ -47,7 +52,8 @@ const Header = ({ onApplyClick }) => {
             {/* Logo Section */}
             <div
               className="flex items-center gap-3 cursor-pointer"
-              onClick={() => scrollToSection("hero")}
+              onClick={() => navigate("/")}
+
             >
               <div className="relative">
                 <img
@@ -78,10 +84,18 @@ const Header = ({ onApplyClick }) => {
 
             {/* Desktop Navigation */}
             <nav className="hidden md:flex items-center gap-8">
+              
               {navItems.map((item) => (
                 <button
                   key={item.id}
-                  onClick={() => scrollToSection(item.id)}
+                  onClick={() => {
+                if (item.id === "gallery") {
+                navigate("/gallery");
+                } else {
+                scrollToSection(item.id);
+                }
+              }}
+
                   className={`text-sm font-medium transition-colors hover:text-blue-600 ${
                     scrolled
                       ? activeSection === item.id
@@ -138,7 +152,15 @@ const Header = ({ onApplyClick }) => {
             {navItems.map((item) => (
               <button
                 key={item.id}
-                onClick={() => scrollToSection(item.id)}
+                onClick={() => {
+                if (item.id === "gallery") {
+                  navigate("/gallery");
+                  setIsMobileMenuOpen(false);
+                } else {
+                  scrollToSection(item.id);
+            }
+          }}
+
                 className={`block w-full text-left py-2 text-base font-medium border-l-2 pl-4 transition-colors ${
                   activeSection === item.id
                     ? "border-blue-600 text-blue-600 bg-blue-50/50"
