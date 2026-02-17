@@ -2,14 +2,14 @@ import React, { useState, useMemo } from "react";
 
 /*
   This will automatically import ALL images
-  inside assets/achieve and its subfolders
+  inside assets/Archive and its subfolders
 */
 const images = import.meta.glob(
-  "../assets/achieve/**/*.{png,jpg,jpeg,PNG,JPEG,JPG}",
+  "../assets/Archive/**/*.{png,jpg,jpeg,PNG,JPEG,JPG}",
   { eager: true, import: "default" }
 );
 
-export default function AchievePage() {
+export default function ArchivePage() {
   const [selectedFolder, setSelectedFolder] = useState(null);
   const [selectedImage, setSelectedImage] = useState(null);
 
@@ -20,7 +20,7 @@ export default function AchievePage() {
     Object.entries(images).forEach(([path, src]) => {
       // Extract folder name from path
       const parts = path.split("/");
-      const folderName = parts[3]; // achieve / FolderName / image
+      const folderName = parts[3]; // Archive / FolderName / image
 
       if (!data[folderName]) {
         data[folderName] = [];
@@ -83,7 +83,7 @@ export default function AchievePage() {
   return (
     <div className="max-w-6xl mx-auto px-4 py-16">
       <h1 className="text-3xl font-bold mb-10 text-center">
-        Achievements
+        Archivements
       </h1>
 
       <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
