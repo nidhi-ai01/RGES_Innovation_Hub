@@ -31,11 +31,11 @@ const galleries = [
   { title: "ZERODAY - a premi...", link: "https://drive.google.com/drive/folders/1xbxOSlxUtgrOfvh_TERd54wS5xBvCjFI?usp=drive_link" },
 ];
 
-export default function GalleryPage() {
+export default function AchievePage() {
   return (
     <div className ="relative z-10 max-w-6xl mx-auto px-4 py-16">
 
-      <h1 className="text-3xl font-bold mb-10 text-center">Gallery</h1>
+      <h1 className="text-3xl font-bold mb-10 text-center">Achieve</h1>
 
       <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
         {galleries.map((item, index) => (
