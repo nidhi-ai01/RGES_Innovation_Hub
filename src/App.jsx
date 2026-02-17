@@ -17,7 +17,6 @@ import { ApplicationModal } from "./components/ApplicationModal.jsx";
 import ChatbotButton from "./components/ChatbotButton.jsx";
 import ArchivesPage from "./components/ArchivesPage.jsx";
 
-// Import images
 import intellirmLogo from "./assets/intellirmLogo.jpg";
 
 function Home({ setIsModalOpen }) {
@@ -41,12 +40,11 @@ function App() {
 
   return (
     <Router>
-      {/* Header always visible */}
-      <Header onApplyClick={() => setIsModalOpen(true)} logo={""} />
+      <Header onApplyClick={() => setIsModalOpen(true)} />
 
       <Routes>
         <Route path="/" element={<Home setIsModalOpen={setIsModalOpen} />} />
-        <Route path="/Archives" element={<ArchivesPage />} />
+        <Route path="/archives" element={<ArchivesPage />} />
       </Routes>
 
       <Footer />

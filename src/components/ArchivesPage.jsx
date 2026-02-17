@@ -1,11 +1,11 @@
 import React, { useState, useMemo } from "react";
 
 /*
-  This will automatically import ALL images
-  inside assets/Archives and its subfolders
+  Import ALL images inside:
+  src/assets/archives and its subfolders
 */
 const images = import.meta.glob(
-  "../assets/Archives/**/*.{png,jpg,jpeg,PNG,JPEG,JPG}",
+  "../assets/archives/**/*.{png,jpg,jpeg,PNG,JPG,JPEG}",
   { eager: true, import: "default" }
 );
 
@@ -13,14 +13,14 @@ export default function ArchivesPage() {
   const [selectedFolder, setSelectedFolder] = useState(null);
   const [selectedImage, setSelectedImage] = useState(null);
 
-  // Group images by folder name
   const groupedData = useMemo(() => {
     const data = {};
 
     Object.entries(images).forEach(([path, src]) => {
-      // Extract folder name from path
+      // Example path:
+      // ../assets/archives/SCSC Conclave 2025/image.jpg
       const parts = path.split("/");
-      const folderName = parts[3]; // Archives / FolderName / image
+      const folderName = parts[3]; 
 
       if (!data[folderName]) {
         data[folderName] = [];
@@ -32,9 +32,9 @@ export default function ArchivesPage() {
     return data;
   }, []);
 
-  // =========================
+  // ======================
   // IMAGE VIEW
-  // =========================
+  // ======================
   if (selectedFolder) {
     return (
       <div className="max-w-6xl mx-auto px-4 py-16">
@@ -50,7 +50,7 @@ export default function ArchivesPage() {
         </h2>
 
         <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
-          {groupedData[selectedFolder].map((img, index) => (
+          {groupedData[selectedFolder]?.map((img, index) => (
             <img
               key={index}
               src={img}
@@ -77,13 +77,13 @@ export default function ArchivesPage() {
     );
   }
 
-  // =========================
+  // ======================
   // FOLDER VIEW
-  // =========================
+  // ======================
   return (
     <div className="max-w-6xl mx-auto px-4 py-16">
       <h1 className="text-3xl font-bold mb-10 text-center">
-        Archivesments
+        Achievements
       </h1>
 
       <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
