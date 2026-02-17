@@ -15,7 +15,7 @@ import CTASection from "./components/CTASection.jsx";
 import Footer from "./components/Footer.jsx";
 import { ApplicationModal } from "./components/ApplicationModal.jsx";
 import ChatbotButton from "./components/ChatbotButton.jsx";
-import achievePage from "./components/achievePage";
+import ArchivesPage from "./components/ArchivesPage.jsx";
 
 // Import images
 import intellirmLogo from "./assets/intellirmLogo.jpg";
@@ -46,7 +46,7 @@ function App() {
 
       <Routes>
         <Route path="/" element={<Home setIsModalOpen={setIsModalOpen} />} />
-        <Route path="/achieve" element={<achievePage />} />
+        <Route path="/Archives" element={<ArchivesPage />} />
       </Routes>
 
       <Footer />

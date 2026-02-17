@@ -33,7 +33,7 @@ const Header = ({ onApplyClick }) => {
     { id: "journey", label: "Journey" },
     { id: "programs", label: "Programs" },
     { id: "blog", label: "Blog" },
-    {id: "achieve", label: "achieve" },
+    {id: "Archives", label: "Archives" },
     { id: "partners", label: "Partners" },
   ];
 
@@ -89,8 +89,8 @@ const Header = ({ onApplyClick }) => {
                 <button
                   key={item.id}
                   onClick={() => {
-                if (item.id === "achieve") {
-                navigate("/achieve");
+                if (item.id === "Archives") {
+                navigate("/Archives");
                 } else {
                 scrollToSection(item.id);
                 }
@@ -153,8 +153,8 @@ const Header = ({ onApplyClick }) => {
               <button
                 key={item.id}
                 onClick={() => {
-                if (item.id === "achieve") {
-                  navigate("/achieve");
+                if (item.id === "Archives") {
+                  navigate("/Archives");
                   setIsMobileMenuOpen(false);
                 } else {
                   scrollToSection(item.id);
