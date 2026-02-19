@@ -1,11 +1,12 @@
 import React, { useState, useMemo } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 /*
-  Import ALL images inside:
-  src/assets/archives and its subfolders
+  Automatically import ALL images
+  inside assets/archives and its subfolders
 */
 const images = import.meta.glob(
-  "../assets/archives/**/*.{png,jpg,jpeg,PNG,JPG,JPEG}",
+  "../assets/archives/**/*.{png,jpg,jpeg,PNG,JPEG,JPG}",
   { eager: true, import: "default" }
 );
 
@@ -17,10 +18,8 @@ export default function ArchivesPage() {
     const data = {};
 
     Object.entries(images).forEach(([path, src]) => {
-      // Example path:
-      // ../assets/archives/SCSC Conclave 2025/image.jpg
       const parts = path.split("/");
-      const folderName = parts[3]; 
+      const folderName = parts[3];
 
       if (!data[folderName]) {
         data[folderName] = [];
@@ -32,71 +31,110 @@ export default function ArchivesPage() {
     return data;
   }, []);
 
-  // ======================
+  const containerVariants = {
+    hidden: {},
+    visible: {
+      transition: {
+        staggerChildren: 0.1,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: { opacity: 1, y: 0 },
+  };
+
+  // =========================
   // IMAGE VIEW
-  // ======================
+  // =========================
   if (selectedFolder) {
     return (
-      <div className="max-w-6xl mx-auto px-4 py-16">
+      <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100 px-4 py-16">
         <button
           onClick={() => setSelectedFolder(null)}
-          className="mb-6 text-blue-600 font-semibold"
+          className="mb-8 text-blue-600 font-semibold hover:underline"
         >
           ← Back to Events
         </button>
 
-        <h2 className="text-2xl font-bold mb-8 text-center">
+        <h2 className="text-3xl font-bold mb-12 text-center">
           {selectedFolder}
         </h2>
 
-        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
-          {groupedData[selectedFolder]?.map((img, index) => (
-            <img
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          animate="visible"
+          className="grid sm:grid-cols-2 md:grid-cols-3 gap-8 max-w-6xl mx-auto"
+        >
+          {groupedData[selectedFolder].map((img, index) => (
+            <motion.img
               key={index}
+              variants={itemVariants}
               src={img}
               alt="event"
+              whileHover={{ scale: 1.05 }}
+              transition={{ type: "spring", stiffness: 200 }}
               onClick={() => setSelectedImage(img)}
-              className="rounded-xl shadow-lg cursor-pointer hover:scale-105 transition"
+              className="rounded-2xl shadow-lg cursor-pointer"
             />
           ))}
-        </div>
+        </motion.div>
 
-        {selectedImage && (
-          <div
-            className="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50"
-            onClick={() => setSelectedImage(null)}
-          >
-            <img
-              src={selectedImage}
-              alt="preview"
-              className="max-h-[90%] max-w-[90%] rounded-lg"
-            />
-          </div>
-        )}
+        <AnimatePresence>
+          {selectedImage && (
+            <motion.div
+              className="fixed inset-0 bg-black/80 flex items-center justify-center z-50"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={() => setSelectedImage(null)}
+            >
+              <motion.img
+                src={selectedImage}
+                alt="preview"
+                initial={{ scale: 0.8 }}
+                animate={{ scale: 1 }}
+                exit={{ scale: 0.8 }}
+                transition={{ type: "spring", stiffness: 150 }}
+                className="max-h-[90%] max-w-[90%] rounded-xl shadow-2xl"
+              />
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
     );
   }
 
-  // ======================
+  // =========================
   // FOLDER VIEW
-  // ======================
+  // =========================
   return (
-    <div className="max-w-6xl mx-auto px-4 py-16">
-      <h1 className="text-3xl font-bold mb-10 text-center">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100 px-4 py-16">
+      <h1 className="text-4xl font-bold mb-16 text-center">
         Achievements
       </h1>
 
-      <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
+      <motion.div
+        variants={containerVariants}
+        initial="hidden"
+        animate="visible"
+        className="grid sm:grid-cols-2 md:grid-cols-3 gap-8 max-w-6xl mx-auto"
+      >
         {Object.keys(groupedData).map((folder, index) => (
-          <button
+          <motion.button
             key={index}
+            variants={itemVariants}
+            whileHover={{ y: -6 }}
+            whileTap={{ scale: 0.95 }}
             onClick={() => setSelectedFolder(folder)}
-            className="p-6 rounded-xl shadow hover:shadow-xl border text-center font-medium transition hover:scale-105"
+            className="p-8 rounded-2xl border bg-white shadow-md hover:shadow-xl transition-all duration-300 text-lg font-medium"
           >
             {folder}
-          </button>
+          </motion.button>
         ))}
-      </div>
+      </motion.div>
     </div>
   );
 }
