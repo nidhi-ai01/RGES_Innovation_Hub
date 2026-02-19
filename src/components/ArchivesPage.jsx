@@ -14,12 +14,13 @@ export default function ArchivesPage() {
   const [selectedFolder, setSelectedFolder] = useState(null);
   const [selectedImage, setSelectedImage] = useState(null);
 
+  // Group images by folder
   const groupedData = useMemo(() => {
     const data = {};
 
     Object.entries(images).forEach(([path, src]) => {
       const parts = path.split("/");
-      const folderName = parts[3];
+      const folderName = parts[3]; // archives / FolderName / image
 
       if (!data[folderName]) {
         data[folderName] = [];
@@ -35,7 +36,7 @@ export default function ArchivesPage() {
     hidden: {},
     visible: {
       transition: {
-        staggerChildren: 0.1,
+        staggerChildren: 0.08,
       },
     },
   };
@@ -45,15 +46,21 @@ export default function ArchivesPage() {
     visible: { opacity: 1, y: 0 },
   };
 
-  // =========================
+  // ===============================
   // IMAGE VIEW
-  // =========================
+  // ===============================
   if (selectedFolder) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100 px-4 py-16">
+      <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100 px-4 pt-32 pb-16">
+        
+        {/* Back Button */}
         <button
-          onClick={() => setSelectedFolder(null)}
-          className="mb-8 text-blue-600 font-semibold hover:underline"
+          onClick={() => {
+            setSelectedImage(null);
+            setSelectedFolder(null);
+            window.scrollTo({ top: 0, behavior: "smooth" });
+          }}
+          className="mb-10 text-blue-600 font-semibold hover:underline"
         >
           ← Back to Events
         </button>
@@ -82,6 +89,7 @@ export default function ArchivesPage() {
           ))}
         </motion.div>
 
+        {/* Lightbox */}
         <AnimatePresence>
           {selectedImage && (
             <motion.div
@@ -107,11 +115,12 @@ export default function ArchivesPage() {
     );
   }
 
-  // =========================
+  // ===============================
   // FOLDER VIEW
-  // =========================
+  // ===============================
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100 px-4 py-16">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100 px-4 pt-32 pb-16">
+      
       <h1 className="text-4xl font-bold mb-16 text-center">
         Achievements
       </h1>
@@ -128,7 +137,10 @@ export default function ArchivesPage() {
             variants={itemVariants}
             whileHover={{ y: -6 }}
             whileTap={{ scale: 0.95 }}
-            onClick={() => setSelectedFolder(folder)}
+            onClick={() => {
+              setSelectedFolder(folder);
+              window.scrollTo({ top: 0, behavior: "smooth" });
+            }}
             className="p-8 rounded-2xl border bg-white shadow-md hover:shadow-xl transition-all duration-300 text-lg font-medium"
           >
             {folder}
