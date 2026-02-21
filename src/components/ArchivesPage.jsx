@@ -112,7 +112,7 @@ export default function ArchivesPage() {
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 px-4 pt-32 pb-20 text-white">
 
       <h1 className="text-5xl font-bold mb-20 text-center tracking-wide">
-        Archives
+        Archive
         
       </h1>
 
